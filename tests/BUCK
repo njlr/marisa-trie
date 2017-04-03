@@ -1,0 +1,63 @@
+prebuilt_cxx_library(
+  name = 'marisa-assert',
+  header_only = True,
+  header_namespace = '',
+  exported_headers = [
+    'marisa-assert.h'
+  ],
+)
+
+cxx_binary(
+  name = 'base-test',
+  srcs = [
+    'base-test.cc',
+  ],
+  deps = [
+    '//:marisa-trie',
+    ':marisa-assert',
+  ],
+)
+
+cxx_binary(
+  name = 'io-test',
+  srcs = [
+    'io-test.cc',
+  ],
+  deps = [
+    '//:marisa-trie',
+    ':marisa-assert',
+  ],
+)
+
+cxx_binary(
+  name = 'marisa-test',
+  srcs = [
+    'marisa-test.cc',
+  ],
+  deps = [
+    '//:marisa-trie',
+    ':marisa-assert',
+  ],
+)
+
+cxx_binary(
+  name = 'trie-test',
+  srcs = [
+    'trie-test.cc',
+  ],
+  deps = [
+    '//:marisa-trie',
+    ':marisa-assert',
+  ],
+)
+
+cxx_binary(
+  name = 'vector-test',
+  srcs = [
+    'vector-test.cc',
+  ],
+  deps = [
+    '//:marisa-trie',
+    ':marisa-assert',
+  ],
+)
